@@ -137,6 +137,30 @@ class WysiwygEditor extends Component {
   };
 
   keyBindingFn = event => {
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === 'x') {
+      return 'strikethrough';
+    }
+
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === 'u') {
+      return 'url';
+    }
+
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === '7') {
+      return 'ol-list';
+    }
+
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === '8') {
+      return 'ul-list';
+    }
+
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === '9') {
+      return 'blockquote';
+    }
+
+    if (KeyBindingUtil.hasCommandModifier(event) && event.shiftKey && event.key === 'c') {
+      return 'inline-code';
+    }
+
     if (event.key === 'Tab') {
       const { onTab } = this.props;
       if (!onTab || !onTab(event)) {
