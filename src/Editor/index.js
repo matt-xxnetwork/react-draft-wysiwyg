@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Editor,
   EditorState,
+  KeyBindingUtil,
   RichUtils,
   convertToRaw,
   convertFromRaw,
